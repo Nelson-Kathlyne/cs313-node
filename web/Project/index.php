@@ -10,8 +10,9 @@
     <body>
         <header>
             <nav>
-                <?php include "./nav.php"; ?>
+                <?php include "common/nav.php"; ?>
             </nav>
+            <h1>My Family Recipes</h1>
         </header>
     </body>
 </html>
