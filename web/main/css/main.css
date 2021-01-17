@@ -3,9 +3,12 @@ ul{list-style-type: none;
     padding: 0;
     background-color:lightseagreen;
 }
+li{
+    display:inline;
+}
+
 a:link, a:visited{ color:white;
                    background-color: lightseagreen;
-                   display: inline;
                    text-decoration: none;
     
 }
