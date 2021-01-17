@@ -10,7 +10,7 @@
     <body>
         <header>
             <nav>
-                <?php include "common/nav.php"; ?>
+                <?php include "./common/nav.php"; ?>
             </nav>
         </header>
         <h1>Coming Soon...</h1>
