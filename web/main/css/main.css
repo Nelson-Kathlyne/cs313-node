@@ -1,13 +1,12 @@
 ul{list-style-type: none;
     margin: 0;
     padding: 0;
-    
+    background-color:lightseagreen;
 }
-a:link, a:visited{text-decoration: none;
-                  color: white;
-                  display: inline-block;
-                  background-color: darkseagreen;
-
+a:link, a:visited{ color:white;
+                   background-color: lightseagreen;
+                   display: inline;
+    
 }
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
