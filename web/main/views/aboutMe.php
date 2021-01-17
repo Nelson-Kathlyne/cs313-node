@@ -28,3 +28,4 @@
         paitence, repetition, and to stick with it until you understand it. My love for creating is
         also one of the things that led me to this major and hopefully career path.</p>
     </body>
+</html>
