@@ -6,6 +6,11 @@ ul{list-style-type: none;
 li{
     display:inline;
 }
+li a{display:block;
+    text-align: center;
+    padding: 18px 20px;
+
+}
 
 a:link, a:visited{ color:white;
                    background-color: lightseagreen;
