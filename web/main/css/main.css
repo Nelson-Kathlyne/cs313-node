@@ -6,10 +6,13 @@ ul{list-style-type: none;
 li{
     display:inline;
 }
-li a{display:block;
+li a{
     text-align: center;
     padding: 18px 20px;
+}
 
+li a:hover{
+    background-color: teal;
 }
 
 a:link, a:visited{ color:white;
