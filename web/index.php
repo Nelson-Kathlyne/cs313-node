@@ -2,22 +2,27 @@
 
 require 'db.php';
 
-
-var_dump($_GET);
-
-
-
+$search = filter_input(INPUT_GET,'search',FILTER_SANITIZE_STRING);
 
 $connection = connectDB();
 
-$sql = "SELECT * from scriptures";
+$sql = 'SELECT * from scriptures';
+
+if($search) {
+  $sql = 'SELECT * from scriptures WHERE book LIKE "%:search%"';
+}
 
 $stmt = $connection->prepare($sql);
 
-// $stmt->bindValue(':userId', $userId, PDO::PARAM_INT);
+$stmt->bindValue(':search', $search, PDO::PARAM_STR);
 $stmt->execute();
 $response = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $stmt->closeCursor();
+
+$message = "";
+if($stmt->rowCount() == 0) {
+  $message = "No results found.";
+}
 
 
 ?>
@@ -42,5 +47,6 @@ $stmt->closeCursor();
     }
   ?>
   </ul>
+  <h4 style="color: red"><?php echo $message;?></h4>
 </body>
 </html>
