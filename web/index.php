@@ -2,4 +2,15 @@
 
 require 'db.php';
 
-connectDB();
+$connection = connectDB();
+
+$sql = "SELECT * from scriptures";
+
+$stmt = $connection->prepare($sql);
+
+// $stmt->bindValue(':userId', $userId, PDO::PARAM_INT);
+$stmt->execute();
+$response = $stmt->fetch(PDO::FETCH_ASSOC);
+$stmt->closeCursor();
+
+var_dump($response);
