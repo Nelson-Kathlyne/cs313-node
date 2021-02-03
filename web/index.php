@@ -1,5 +1,5 @@
 <?php
 
-  phpinfo();
+require 'db.php';
 
-?>
+connectDB();
