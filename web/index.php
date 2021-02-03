@@ -9,7 +9,7 @@ $connection = connectDB();
 $sql = 'SELECT * from scriptures';
 
 if($search) {
-  $sql = 'SELECT * from scriptures WHERE book LIKE "%:search%"';
+  $sql = 'SELECT * from scriptures WHERE book = :search';
 }
 
 $stmt = $connection->prepare($sql);
@@ -20,9 +20,9 @@ $response = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $stmt->closeCursor();
 
 $message = "";
-if($stmt->rowCount() == 0) {
-  $message = "No results found.";
-}
+// if($stmt->rowCount() == 0) {
+//   $message = "No results found.";
+// }
 
 
 ?>
