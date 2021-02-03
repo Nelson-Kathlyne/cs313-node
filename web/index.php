@@ -38,6 +38,7 @@ if($stmt->rowCount() == 0) {
   <form action="/" method="get">
     <label for="search"></label>
     <input type="search" name="search" id="search">
+    <imput type="submit" value="search"/>
   </form>
   <h1>Scripture Resources</h1>
   <ul>
