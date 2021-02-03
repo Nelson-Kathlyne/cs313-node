@@ -41,13 +41,13 @@ if($stmt->rowCount() == 0) {
   <form action="/" method="get">
     <label for="search"></label>
     <input type="search" name="search" id="search">
-    <imput type="submit" value="search"/>
+    <input type="submit" value="search"/>
   </form>
   <h1>Scripture Resources</h1>
   <ul>
   <?php
     foreach($response as $scripture) {
-      echo "<li><strong>$scripture[book] $scripture[chapter]:$scripture[verse]</strong> - \"$scripture[content]\"</li>";
+      echo "<li><a href='/scripture.php?id=$scripture[id]'><strong>$scripture[book] $scripture[chapter]:$scripture[verse]</strong></a></li>";
     }
   ?>
   </ul>
