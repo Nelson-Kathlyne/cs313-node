@@ -12,7 +12,7 @@ $connection = connectDB();
 $sql = 'SELECT * from scriptures';
 
 if($search) {
-  $sql = 'SELECT * from scriptures WHERE book = :search';
+  $sql = 'SELECT * from scriptures WHERE book = ":search"';
 }
 
 $stmt = $connection->prepare($sql);
