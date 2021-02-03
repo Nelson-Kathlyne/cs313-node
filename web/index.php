@@ -26,10 +26,12 @@ $stmt->closeCursor();
 <body>
   <form action="" method="get"></form>
   <h1>Scripture Resources</h1>
+  <ul>
   <?php
     foreach($response as $scripture) {
-      var_dump($scripture);
+      echo "<li><strong>$scripture[book] $scripture[chapter]:$scripture[verse]</strong> - $scripture[content]</li>";
     }
   ?>
+  </ul>
 </body>
 </html>
