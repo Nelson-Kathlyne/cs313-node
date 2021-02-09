@@ -12,12 +12,6 @@ $connection = connectDB();
 $sql = 'SELECT * from recipes';
 
 
-$sql = 'SELECT recipeName, recipes.foodIndexId FROM recipes INNER JOIN foodIndex
-ON foodIndex.foodIndexId = recipes.foodIndexId';
-//if($search) {
-  //$sql = "SELECT * from recipes WHERE book = :search";
-//}
-
 $stmt = $connection->prepare($sql);
 
 $stmt->bindValue(':search', $search, PDO::PARAM_STR);

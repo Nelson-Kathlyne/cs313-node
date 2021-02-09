@@ -26,10 +26,10 @@ function connectDB() {
       if(is_object($link)) {
           return $link;
       }
-  //} catch(PDOException $e) {
-    //  var_dump($e);
-      //exit;
-  //}
+  } catch(PDOException $e) {
+      var_dump($e);
+      exit;
+  }
 }
 
 
