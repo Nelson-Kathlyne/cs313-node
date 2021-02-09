@@ -24,11 +24,12 @@ function connectDB() {
   $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
   // Create the actual connection object and assign it to a variable
   
-  var_dump($dsn);
+
   
   try {
       $link = new PDO($dsn, $dbUser, $dbPassword, $options);
       if(is_object($link)) {
+          var_dump($link);
           return $link;
       }
 
