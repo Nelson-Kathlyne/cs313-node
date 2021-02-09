@@ -1,6 +1,6 @@
 <?php
 
-require 'db.php';
+require 'connection.php';
 
 $search = "";
 if(isset($_GET['search'])){
