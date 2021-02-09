@@ -7,13 +7,14 @@ if(isset($_GET['search'])){
   $search = filter_input(INPUT_GET,'search',FILTER_SANITIZE_STRING);
 }
 
-var_dump($search);
+
 
 $connection = connectDB();
 
 
 $sql = 'SELECT * from recipes';
 
+var_dump($sql);
 
 $stmt = $connection->prepare($sql);
 
