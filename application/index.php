@@ -13,7 +13,7 @@ $sql = 'SELECT * from recipes';
 
 
 $sql = 'SELECT recipeName, recipes.foodIndexId FROM recipes INNER JOIN foodIndex
-ON foodIndex.foodIndexId = recipes.foodIndexId'
+ON foodIndex.foodIndexId = recipes.foodIndexId';
 //if($search) {
   //$sql = "SELECT * from recipes WHERE book = :search";
 //}
@@ -32,3 +32,18 @@ if($stmt->rowCount() == 0) {
 
 
 ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Week 5</title>
+        <meta charset = "UTF-8">
+    </head>
+    <body>
+        <h1>Week 5</h1>
+        <ul>
+            <li><a href='notes.html'>Notes</a></li>
+            <li><a href=''>Code Examples</a></li>
+            <li><a href='teams.html'>Team Activities</a></li>
+        </ul>
+    </body>
+</html>
