@@ -12,7 +12,7 @@ if(isset($_GET['search'])){
 $connection = connectDB();
 
 
-$sql = 'SELECT * from recipes';
+$sql = "SELECT * from scriptures" ;
 
 var_dump($sql);
 
