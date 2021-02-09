@@ -29,6 +29,8 @@ function connectDB() {
           return $link;
       }
       var_dump($link);
+      exit;
+
   } catch(PDOException $e) {
       var_dump($e);
       exit;
