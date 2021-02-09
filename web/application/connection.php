@@ -29,14 +29,13 @@ function connectDB() {
   try {
       $link = new PDO($dsn, $dbUser, $dbPassword, $options);
       if(is_object($link)) {
-          var_dump($link);
+         ;
           return $link;
       }
 
   } catch(PDOException $e) {
       var_dump($e);
-      exit;
-  }
+     }
 }
 
 
