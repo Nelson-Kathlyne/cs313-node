@@ -18,6 +18,8 @@ function connectDB() {
   $dbPassword = $dbopts["pass"];
   $dbName = ltrim($dbopts["path"],'/');
 
+  var_dump($dbName);
+
   $dsn = "pgsql:host=$dbHost;port=$dbPort;dbname=$dbName";
   $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
   // Create the actual connection object and assign it to a variable
@@ -28,8 +30,6 @@ function connectDB() {
       if(is_object($link)) {
           return $link;
       }
-      var_dump($link);
-      exit;
 
   } catch(PDOException $e) {
       var_dump($e);
