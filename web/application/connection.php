@@ -18,12 +18,13 @@ function connectDB() {
   $dbPassword = $dbopts["pass"];
   $dbName = ltrim($dbopts["path"],'/');
 
-  var_dump($dbName);
+ 
 
   $dsn = "pgsql:host=$dbHost;port=$dbPort;dbname=$dbName";
   $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
   // Create the actual connection object and assign it to a variable
   
+  var_dump($dsn);
   
   try {
       $link = new PDO($dsn, $dbUser, $dbPassword, $options);
