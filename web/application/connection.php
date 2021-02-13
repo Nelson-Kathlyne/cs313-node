@@ -1,41 +1,37 @@
-<?php
+<php function connectRecipeDb() {
+	$db = NULL;
 
-function connectDB() {
-  $dbUrl = getenv('DATABASE_URL');
+	try {
+		$dbUrl = getenv('DATABASE_URL');
 
-  if (empty($dbUrl)) {
-      // example localhost configuration URL with postgres username and a database called cs313db
-      $dbUrl = 'postgres://xazedpmayqitvl:5eec8f701e6172d54b89538d3c
-      00881800b5e33eb0e178103feeec094250f9d3@ec2-52-207-124-89.compute-1.amazonaws.com
-      :5432/d4llj7787ln62m';
-  }
+		if (!isset($dbUrl) || empty($dbUrl)) {
 
-  $dbopts = parse_url($dbUrl);
+			$dbUrl = "postgres://xazedpmayqitvl:5eec8f701e6172d54b89538d3c00881800b5e33eb0e178103feeec094250f9d3@ec2-52-207-124-89.compute-1.amazonaws.com:5432/d4llj7787ln62m";
 
-  $dbHost = $dbopts["host"];
-  $dbPort = $dbopts["port"];
-  $dbUser = $dbopts["user"];
-  $dbPassword = $dbopts["pass"];
-  $dbName = ltrim($dbopts["path"],'/');
+		}
 
- 
+		// Get the various parts of the DB Connection from the URL
+		$dbopts = parse_url($dbUrl);
 
-  $dsn = "pgsql:host=$dbHost;port=$dbPort;dbname=$dbName";
-  $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
-  // Create the actual connection object and assign it to a variable
-  
+		$dbHost = $dbopts["host"];
+		$dbPort = $dbopts["port"];
+		$dbUser = $dbopts["user"];
+		$dbPassword = $dbopts["pass"];
+		$dbName = ltrim($dbopts["path"],'/');
 
-  
-  try {
-      $link = new PDO($dsn, $dbUser, $dbPassword, $options);
-      if(is_object($link)) {
-          return $link;
-      }
+		// Create the PDO connection
+		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-  } catch(PDOException $e) {
-      var_dump($e);
-      exit;
-  }
+		$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+	}
+	catch (PDOException $ex) {
+		// If this were in production, you would not want to echo
+		// the details of the exception.
+		echo "Error connecting to DB. Details: $ex";
+		die();
+	}
+
+	return $db;
 }
 
 
