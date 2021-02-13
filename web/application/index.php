@@ -3,7 +3,7 @@
 
 
 require "connection.php";
-$db = connectRecipeDb();
+$db = connectDb();
 
 ?>
 <!DOCTYPE html>
