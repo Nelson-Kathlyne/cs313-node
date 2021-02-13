@@ -5,7 +5,10 @@ function connectDB() {
 
   if (empty($dbUrl)) {
       // example localhost configuration URL with postgres username and a database called cs313db
-      $dbUrl = "postgres://ocwvfhnmjqterq:23fc9e370bfe6d6177eb4c590eced993389439707b5b2a4c0573295d94423a6d@ec2-54-86-189-179.compute-1.amazonaws.com:5432/d92792seehr1o1";
+      $dbUrl = 'postgres://lsjqzkasmoousz:6ee72fdfb6e14dc53f557568
+      a1bb95ff46ddecaa7400a76c4e9c3d7515ea9c7e@ec2-54-225-190-241.compute-1.amazonaws.
+      com:5432/dee96cfu5d222r'
+      ;
   }
 
   $dbopts = parse_url($dbUrl);
