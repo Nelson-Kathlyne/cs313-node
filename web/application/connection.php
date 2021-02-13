@@ -1,4 +1,4 @@
-<php function connectRecipeDb() {
+<?php function connectRecipeDb() {
 	$db = NULL;
 
 	try {

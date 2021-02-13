@@ -36,7 +36,7 @@ $db = connectDb();
 // Notice that we avoid using "SELECT *" here. This is considered
 // good practice so we don't inadvertently bring back data we don't
 // want, especially if the database changes later.
-$statement = $db->prepare("SELECT recipeName, chapter, verse, content FROM scripture");
+$statement = $db->prepare("SELECT recipeName, recipeIngredients, recipeInstructions FROM recipes");
 $statement->execute();
 
 // Go through each result
@@ -45,12 +45,12 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	// The variable "row" now holds the complete record for that
 	// row, and we can access the different values based on their
 	// name
-	$book = $row['book'];
-	$chapter = $row['chapter'];
-	$verse = $row['verse'];
-	$content = $row['content'];
+	$name = $row['recipeName'];
+	$ingredients = $row['recipeIngredients'];
+	$instructions = $row['recipeInstructions'];
 
-	echo "<p><strong>$book $chapter:$verse</strong> - \"$content\"<p>";
+
+	echo "<p><h3>$name</h3><br>$ingredients<br>$instructions<p>";
 }
 
 ?>
