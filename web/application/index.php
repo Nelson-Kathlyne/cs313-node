@@ -37,7 +37,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	$instructions = $row['recipeInstructions'];
 
 
-	echo $name ;
+	echo "<p><h3>$name</h3><br>$ingredients<br>$instructions<p>";
 }
 
 ?>
