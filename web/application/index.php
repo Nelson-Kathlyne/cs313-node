@@ -11,6 +11,8 @@ if($search) {
   $sql = "SELECT * from recipes WHERE recipeName = :search";
 }
 
+$stmt = $connection->prepare($sql);
+
 
 ?>
 <!DOCTYPE html>
