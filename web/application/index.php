@@ -25,8 +25,8 @@ $db = connectRecipeDb();
 
 //  prepare the statement
 
-$statement = $db->prepare("SELECT recipeName, recipeIngredients, recipeInstructions FROM recipes");
-echo $statement;
+$sql = "SELECT recipeName, recipeIngredients, recipeInstructions FROM recipes";
+$stmt = $db ->prepare($sql);
 $statement->execute();
 
 // Go through each result
