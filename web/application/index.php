@@ -22,7 +22,11 @@ $db = connectRecipeDb();
     <input type="search" name="search" id="search">
     <input type="submit" value="search"/>
   </form>
-
+  <?php
+    foreach($response as $recicpe) {
+      echo "<li><a href='/recipes.php?id=$recipe[id]'><strong>$recipe[recipeName] $recipe[recipeIngredients] $recipe[recipeInstructions]</strong></a></li>";
+    }
+  ?>
 
 </div>
 
