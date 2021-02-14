@@ -7,6 +7,10 @@ $db = connectRecipeDb();
 
 $sql = 'SELECT * from recipes';
 
+if($search) {
+  $sql = "SELECT * from recipes WHERE recipeName = :search";
+}
+
 
 ?>
 <!DOCTYPE html>
