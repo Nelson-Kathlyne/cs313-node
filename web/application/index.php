@@ -13,6 +13,7 @@ if($search) {
 
 $stmt = $db->prepare($sql);
 
+$stmt->bindValue(':search', $search, PDO::PARAM_STR);
 
 ?>
 <!DOCTYPE html>
