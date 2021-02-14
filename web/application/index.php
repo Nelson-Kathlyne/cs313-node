@@ -5,6 +5,11 @@
 require "connection.php";
 $db = connectRecipeDb();
 
+$search = "";
+if(isset($_GET['search'])){
+  $search = filter_input(INPUT_GET,'search',FILTER_SANITIZE_STRING);
+}
+
 $sql = 'SELECT * from recipes';
 
 if($search) {
