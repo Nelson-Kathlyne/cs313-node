@@ -11,17 +11,17 @@ if($search) {
   $sql = "SELECT * from recipes WHERE recipeName = :search";
 }
 
-$stmt = $db->prepare($sql);
+ $stmt = $db->prepare($sql);
 
-$stmt->bindValue(':search', $search, PDO::PARAM_STR);
-$stmt->execute();
-$response = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$stmt->closeCursor();
+// $stmt->bindValue(':search', $search, PDO::PARAM_STR);
+// $stmt->execute();
+// $response = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// $stmt->closeCursor();
 
-$message = "";
-if($stmt->rowCount() == 0) {
-  $message = "No results found.";
-}
+// $message = "";
+// if($stmt->rowCount() == 0) {
+//   $message = "No results found.";
+// }
 ?>
 <!DOCTYPE html>
 <html>
