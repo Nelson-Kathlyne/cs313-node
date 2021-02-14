@@ -34,9 +34,10 @@ if($id) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Recipes</title>
 </head>
 <body>
-    
+    <h1><?php echo "$recipes[recipeName]";?></h1>
+    <p>"<?php echo $recipes['recipeIngredients'] + $recipes['recipeInstructions'];?>"</p>
 </body>
 </html>
