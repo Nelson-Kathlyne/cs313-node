@@ -23,7 +23,7 @@ function connectRecipeDb() {
 		$options = array (PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 		// Create the PDO connection
 		try{
-			$link = new PDO($dsn, $dbUser, $dbPassowrd, $otpions);
+			$link = new PDO($dsn, $dbUser, $dbPassword, $options);
 			if(is_object($link)) {
 				return $link;
 			}
