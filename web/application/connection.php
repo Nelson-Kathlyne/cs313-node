@@ -1,4 +1,6 @@
-<?php function connectRecipeDb() {
+<?php 
+
+function connectRecipeDb() {
 	$db = NULL;
 
 	try {
@@ -25,8 +27,7 @@
 		$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 	}
 	catch (PDOException $ex) {
-		// If this were in production, you would not want to echo
-		// the details of the exception.
+		
 		echo "Error connecting to DB. Details: $ex";
 		die();
 	}

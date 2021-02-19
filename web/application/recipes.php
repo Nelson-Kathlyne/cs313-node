@@ -21,8 +21,7 @@ if($id) {
     $scripture = $stmt->fetch(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
 } else {
-    $message = "No results found.";
-    die();
+    $message = "No results found.";;
 }
 
 
