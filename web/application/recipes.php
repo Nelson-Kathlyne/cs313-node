@@ -22,15 +22,16 @@ $db = connectRecipeDb();
       recipeInstructions FROM recipes");
       $viewRecipe ->execute();
 
-      while ($row = $viewRecipe ->fetch(PDO::FETCH_ASSOC)
-      {
+        while ($row = $viewRecipe ->fetch(PDO::FETCH_ASSOC))
+{
+      
         $recipeName = $row['recipeName'];
         $recipeIngredients = $row['recipeIngredients'];
         $recipeInstructions = $row['recipeInstructions'];
 
         echo "<h3>$recipeName<h3> <p>$recipeIngredients<p><br><p>$recipeInstructions";
 
-      }
+} 
     ?>
     </div>
 </body>
