@@ -9,10 +9,10 @@ if(isset($_GET['search'])){
 
 
 $connection = connectRecipeDb();
-var_dump($connection);
-exit;
+
 
 $sql = 'SELECT * from recipes';
+var_dump($sql);
 
 if($search) {
   $sql = "SELECT * from recipes WHERE recipeName = :search";
