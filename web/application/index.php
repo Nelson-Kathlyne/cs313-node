@@ -7,12 +7,9 @@ if(isset($_GET['search'])){
   $search = filter_input(INPUT_GET,'search',FILTER_SANITIZE_STRING);
 }
 
-
 $connection = connectRecipeDb();
 
-
 $sql = 'SELECT * from recipes';
-var_dump($sql);
 
 if($search) {
   $sql = "SELECT * from recipes WHERE recipeName = :search";
@@ -56,4 +53,3 @@ if($stmt->rowCount() == 0) {
 
 </body>
 </html>
-
