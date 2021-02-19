@@ -6,10 +6,11 @@ $search = "";
 if(isset($_GET['search'])){
   $search = filter_input(INPUT_GET,'search',FILTER_SANITIZE_STRING);
 }
-var_dump($search);
-exit;
+
 
 $connection = connectRecipeDb();
+var_dump($connection);
+exit;
 
 $sql = 'SELECT * from recipes';
 
