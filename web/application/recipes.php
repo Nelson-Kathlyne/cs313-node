@@ -4,28 +4,7 @@
 
 require "connection.php";
 $db = connectRecipeDb();
-$id = "";
-if(isset($_GET['id'])){
-  $id = filter_input(INPUT_GET,'id',FILTER_SANITIZE_NUMBER_INT);
-}
-
-
-$message = "";
-if($id) {
-  $sql = "SELECT * from recipes WHERE id = :id";
-
-  $stmt = $db->prepare($sql);
-
-    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-    $stmt->execute();
-    $scripture = $stmt->fetch(PDO::FETCH_ASSOC);
-    $stmt->closeCursor();
-} else {
-    $message = "No results found.";;
-}
-
-
-?>
+ ?>
 
 
 <!DOCTYPE html>
@@ -36,7 +15,23 @@ if($id) {
     <title>Recipes</title>
 </head>
 <body>
-    <h1><?php echo "$recipes[recipeName]";?></h1>
-    <p>"<?php echo $recipes['recipeIngredients'] + $recipes['recipeInstructions'];?>"</p>
+    <div id = viewRecipe>
+    <h1>Let's Eat</h1>
+    <?php
+      $viewRecipe = $db->prepare("SELECT recipeName, recipeIngredients,
+      recipeInstructions FROM recipes");
+      $viewRecipe ->execute();
+
+      while ($row = $viewRecipe ->fetch(PDO::FETCH_ASSOC)
+      {
+        $recipeName = $row['recipeName'];
+        $recipeIngredients = $row['recipeIngredients'];
+        $recipeInstructions = $row['recipeInstructions'];
+
+        echo "<h3>$recipeName<h3> <p>$recipeIngredients<p><br><p>$recipeInstructions";
+
+      }
+    ?>
+    </div>
 </body>
 </html>
