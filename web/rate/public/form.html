@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="function.js"></script>
+    <title>Postal Rate Calculator</title>
+</head>
+<body>
+    <form action="#" method="post" id="postageRate" name="postageRate">
+        <label for="weight">Weight in Ounces:</label><br>
+        <input type="text" id="weight" name="weight"><br>
+        <h3>Type of Mail:</h3>
+        <input type="radio" id="mailType" name="mailType" value="stamped">
+        <label for="stamped">Stamped Letter</label><br>
+        <input type="radio" id="mailType" name="mailType" value="metered">
+        <label for="metered">Metered Letter</label><br>
+        <input type="radio" id="mailType" name="mailType" value="flat">
+        <label for="Flat">Large Envelope</label><br>
+        <input type="radio" id="mailType" name="mailType" value="package">
+        <label for="package">First Class Package Service</label><br>
+    </form>
+    <button type="button" name="postageRateBtn" value="Calculate" onclick="mailValues()">Calculate</button>
+    <script>calculateRate()</script>
+    <div id=result></div>
+</body>
+</html>
